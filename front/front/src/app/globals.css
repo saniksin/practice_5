@@ -1,0 +1,115 @@
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 234, 237, 239;
+  --background-end-rgb: 255, 255, 255;
+  --button-gradient-start: 100, 115, 255;
+  --button-gradient-end: 0, 204, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 30, 30, 30;
+    --background-end-rgb: 45, 45, 45;
+    --button-gradient-start: 255, 99, 71;
+    --button-gradient-end: 255, 165, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.button-gradient {
+  background: linear-gradient(to right, rgb(var(--button-gradient-start)), rgb(var(--button-gradient-end)));
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.button-gradient:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-shadow {
+  padding: 2rem;
+  border: 1px solid #444;
+  border-radius: 1rem;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), #2c2c34);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+.card-shadow:hover {
+  background-color: #333;
+  transform: translateY(-0.5rem);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 0.75rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  background-color: #2c2c2c;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.6);
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-container {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.album-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+}
+
+.album-details {
+  font-size: 1.25rem;
+  color: #dcdcdc;
+}
